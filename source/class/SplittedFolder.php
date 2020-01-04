@@ -19,8 +19,13 @@ class SplittedFolder
     {
         $tree = $this->generateTree($file);
 
+        $path = $this->rootPath;
+        foreach ($tree as $part) {
+            $path .= '/'.$part;
+            mkdir($path);
+        }
 
-        print_r($tree);
+
     }
 
 
