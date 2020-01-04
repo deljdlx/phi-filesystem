@@ -17,7 +17,7 @@ class SplittedFolder
     }
 
 
-    public function filePutContents($file, $content, $option = null)
+    public function createFolders($file)
     {
         $file = $this->normalizeFileName($file);
         $tree = $this->generateTree($file);
@@ -28,10 +28,25 @@ class SplittedFolder
             if(!is_dir($path)) {
                 mkdir($path);
             }
-
         }
+
+        return $path;
+
+    }
+
+    public function filePutContents($file, $content, $option = null)
+    {
+        $file = $this->normalizeFileName($file);
+        $path = $this->createFolders($file);
         file_put_contents($path . '/' . $file, $content, $option);
         return $this;
+    }
+
+
+    public function getFilePath($file)
+    {
+        $file = $this->normalizeFileName($file);
+        return $this->createFolders($file).'/'.$file;
     }
 
 
