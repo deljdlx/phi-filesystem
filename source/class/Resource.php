@@ -18,6 +18,8 @@ class Resource
 
     public function normalize()
     {
+
+
         if(!$this->normalizedPath) {
             $this->normalizedPath = str_replace('\\', '/', $this->path);
 
@@ -44,6 +46,9 @@ class Resource
 
 
             $this->normalizedPath = implode('/', $normalizedParts);
+            if(strpos($this->path, '/') === 0 ) {
+                $this->normalizedPath = '/'.$this->normalizedPath;
+            }
 
         }
         return $this->normalizedPath;

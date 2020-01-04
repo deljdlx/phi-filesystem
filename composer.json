@@ -1,0 +1,14 @@
+{
+	"name": "elbiniou/phi-filesystem",
+	"description": "Phi FileSystem",
+	"autoload": {
+		"psr-4": {
+			"Phi\\Event\\": "source/class"
+		},
+		"files": [
+
+		]
+	}
+}
+
+
