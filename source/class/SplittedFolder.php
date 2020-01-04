@@ -15,7 +15,7 @@ class SplittedFolder
     }
 
 
-    public function filePutContents($file, $content, $option)
+    public function filePutContents($file, $content, $option = null)
     {
         $tree = $this->generateTree($file);
 
