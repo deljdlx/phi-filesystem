@@ -1,5 +1,5 @@
 {
-	"name": "elbiniou/phi-filesystem",
+	"name": "deljlx/phi-filesystem",
 	"description": "Phi FileSystem",
 	"autoload": {
 		"psr-4": {
